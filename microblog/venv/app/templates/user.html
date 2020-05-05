@@ -5,7 +5,7 @@
     <table>
         <tr valign="top">
             <td><img src="{{ user.avatar(128) }}"></td>
-            <td><h1>User: {{ user.username }}</h1></td>
+            <td><h1>{{ user.username }}</h1></td>
         </tr>
     </table>
     <hr>
@@ -13,7 +13,7 @@
     <table>
         <tr valign="top">
             <td><img src="{{ post.author.avatar(36) }}"></td>
-            <td>{{ post.author.username }} says:<br>{{ post.body }}</td>
+            <td>{{ post.author.username }} пишет:<br>{{ post.body }}</td>
         </tr>
     </table>
     {% endfor %}

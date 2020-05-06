@@ -9,4 +9,10 @@
         <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
     </div>
     {% endfor %}
+    <div сlass="foto">
+        <ul>
+        <a><img src= "{{ url_for( 'static' , filename='bruce.png') }}"></a>
+        <a><img src= "{{ url_for( 'static' , filename='cat.png') }}"></a>
+        </ul>
+    </div>
 {% endblock %}

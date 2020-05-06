@@ -1,56 +1,22 @@
-<!DOCTYPE html>
+<!DOCTYPE html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.ord./TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
-        <meta charset="utf-8">
-        <style>
-
-            div{
-                margin: 10px;
-                border: 1px solid rgb(255, 255, 255);
-                font-size: 20px;
-                height: 80px;
-            }
-            #header{ 
-                background-color: rgb(255, 255, 255);
-            }
-            #nav {
-                float: right; 
-            }
-            #nav > ul > li {
-                display:block;  
-             }
-            #nav > ul > li a {
-                background: #ffffff;
-                color: rgb(21, 2, 43);
-            }
-            #nav > ul > li > a {
-                color: rgb(21, 2, 43);
-                background:rgb(255, 255, 255);
-            }
-            #nav > ul > li > a {
-                color: rgb(21, 2, 43);
-                background: rgb(255, 255, 255);
-            }
-            #nav > ul > li > a {
-                color: rgb(21, 2, 43);
-                background: rgb(255, 255, 255);
-            }
-            #main{
-                background-color: rgb(255, 255, 255);
-                height: 300px;
-            }
-        </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         {% if title %}
         <title>{{ title }} - Авиаперелеты</title>
         {% else %}
         <title>Мои авиаперелеты</title>
         {% endif %}
+        <link rel = "stylesheet" type = "text/css" href = "{{ url_for( 'static' , filename='style.css') }}">
     </head>
-    <body bcolor="#000" background="back.jpg">
-    <header>
-        <div id="header">
-         <div id='nav'>
-            <ul>
+    <body>
+        <div id="basic">
+            <div id="head-site">
+                <a><img src= "{{ url_for( 'static' , filename='Screenshot_3.png') }}" alt="Авиаперелеты"></a>
+            </div>
+            <div id='menu-top'>
+            <div class="bg-1">
+                <ul>
                 <li><a href="{{ url_for('index') }}">Главная</a></li>
                 {% if current_user.is_anonymous %}
                 <li><a href="{{ url_for('login') }}">Вход</a></li>
@@ -59,13 +25,45 @@
                 <li><a href="{{ url_for('logout') }}">Выход</a></li>
                 {% endif %}
                 <li><a href="{{ url_for('register') }}">Регистрация</a></p></li>
-            </ul>
-         </div>
+                </ul>
+            </div>
+            <div class="bg-2"></div>
+            <div id="content">
+                <div class="right">
+                    <div id="main">
+                        {% block content %}{% endblock %}
+                    </div> 
+                </div>
+                <div class="left">
+                    <div id="left-menu">
+                        <div class="block-nad-menu"></div>
+                        <div class="block-menu">
+                        <ul>
+                        <li><a href="#">Купить билет</a></li>
+                        <li><a href="#">Календарь</a></li>
+                        <li><a href="#">Карта</a></li>
+                        <li><a href="#">Отели</a></li>
+                        <li><a href="#">Спланируйте поездку</a></li>
+                        <li><a href="#">Наши партнеры</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        </ul>
+                        </div>
+                        <div class="block-pod-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="myclr"></div>
+            <div id="podval">
+                <div class="yellow"></div>
+                <div class="p1">ООО “Авиаперелеты” 2020г.<br/></div>
+                <div class="p3"></div>
+            </div>
+            <div class="myclr"></div>
         </div>
-        <div id="main">
-            {% block content %}{% endblock %}
-        </div>
-    </header>
     </body>
 </html>
 

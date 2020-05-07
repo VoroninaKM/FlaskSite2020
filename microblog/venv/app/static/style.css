@@ -15,7 +15,7 @@ li.none-bg {background:none!important;}
 .bg-1 ul li a:hover {color:#fff; background:#217cc7;}
 
 #content {width:960px; padding:20px 0 0 0; }
-.right { float: right; transform: translate(0,80px); top: 20px; width:690px; height: 800px; padding:0 0 0 20px; text-align:justify;}
+.right { float: right; width:690px; height: 800px; padding:0 0 0 20px; text-align:justify;}
 .right h1 {text-transform:uppercase; color:#217cc7; font-weight:normal; margin-top:0;}
 .left {width:250px; float:left;}
 .block-nad-menu {width:240px; height:10px; background:#217cc7;}

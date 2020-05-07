@@ -18,13 +18,14 @@
             <div class="bg-1">
                 <ul>
                 <li><a href="{{ url_for('index') }}">Главная</a></li>
+
                 {% if current_user.is_anonymous %}
                 <li><a href="{{ url_for('login') }}">Вход</a></li>
+                <li><a href="{{ url_for('register') }}">Регистрация</a></p></li>
                 {% else %}
                 <li><a href="{{ url_for('user', username=current_user.username) }}">Профиль</a></li>
                 <li><a href="{{ url_for('logout') }}">Выход</a></li>
                 {% endif %}
-                <li><a href="{{ url_for('register') }}">Регистрация</a></p></li>
                 </ul>
             </div>
             <div class="bg-2"></div>

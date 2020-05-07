@@ -2,8 +2,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Добро пожаловать, {{ current_user.username }}!</h1>
-    <h1>Куда летим сегодня?</h1>
+    <h1>{{ current_user.username }}</h1>
+    <h1>Добро пожаловать!</h1>
+    <h1>Куда полетим сегодня?</h1>
     {% for post in posts %}
     <div> 
         <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>

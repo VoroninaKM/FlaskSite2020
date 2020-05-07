@@ -19,9 +19,8 @@ from app.forms import RegistrationForm
 
 @app.route('/')
 @app.route('/index')
-@login_required
 def index():
-    user = {'username': 'Ksenia'}
+    user = {'username': 'everybody'}
     posts = [
         {
             'author': {'username': 'John'},
@@ -54,7 +53,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
-    return render_template('login.html', title='Вход', form=form)
+    return render_template('login.html', form=form)
     
 
 @app.route('/logout')
@@ -80,8 +79,4 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Привет!'},
-        {'author': user, 'body': 'Куда летим сегодня?'}
-    ]
-    return render_template('user.html', user=user, posts=posts)
+    return render_template('user.html', user=user)

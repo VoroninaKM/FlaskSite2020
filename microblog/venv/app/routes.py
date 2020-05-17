@@ -80,3 +80,7 @@ def register():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     return render_template('user.html', user=user)
+
+@app.route('/calen')
+def calen():
+    return render_template('calendar.html')

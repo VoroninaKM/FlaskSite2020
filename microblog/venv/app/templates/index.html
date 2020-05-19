@@ -7,13 +7,17 @@
     <h1>Куда полетим сегодня?</h1>
     {% for post in posts %}
     <div> 
-        <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
+        <p>{{ post.author.username }} : <b>{{ post.body }}</b></p>
     </div>
     {% endfor %}
-    <div сlass="foto">
-        <ul>
-        <a><img src= "{{ url_for( 'static' , filename='bruce.png') }}"></a>
-        <a><img src= "{{ url_for( 'static' , filename='cat.png') }}"></a>
-        </ul>
+    <div class="container_slider_css">
+        <img class="photo_slider_css" src="https://www.zastavki.com/pictures/originals/2014/World___Italy_Shining_gold_Trevi_Fountain_in_Rome__Italy_062640_.jpg" alt="">
+        <img class="photo_slider_css" src="https://www.tripsavvy.com/thmb/JRbQ8Fpon-gkFxdCpSdP4F9auvs=/2900x1934/filters:fill%28auto,1%29/GettyImages-133969533-596b51705f9b582c3574ec89.jpg" alt="">
+        <img class="photo_slider_css" src="https://travelunlimited.ru/wp-content/uploads/2015/05/Indiya-Tadz-Mahal.jpeg" alt="">
+        <img class="photo_slider_css" src="https://travelunlimited.ru/wp-content/uploads/2015/05/Hram-v-Kitae.jpeg" alt="">
+        <img class="photo_slider_css" src="https://www.webturizm.ru/storage/photos/france/france-parizh-5795.jpg" alt="">
+        <img class="photo_slider_css" src="https://travelunlimited.ru/wp-content/uploads/2015/05/Paris_Louvre_web.jpeg" alt="">
+        <img class="photo_slider_css" src="https://www.tatilimden.com/uploads/686_bali.jpg" alt="">
+        <img class="photo_slider_css" src="https://travelunlimited.ru/wp-content/uploads/2015/05/Asia_web.jpeg" alt="">
     </div>
 {% endblock %}

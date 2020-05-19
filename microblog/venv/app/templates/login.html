@@ -3,6 +3,7 @@
 
 {% block content %}
     <h1>Вход</h1>
+    <table>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
@@ -22,4 +23,5 @@
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <p>{{ form.submit() }}</p>
     </form>
+    </table>
 {% endblock %}

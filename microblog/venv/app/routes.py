@@ -23,16 +23,16 @@ def index():
     user = {'username': 'everybody'}
     posts = [
         {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
+            'author': {'username': 'СТРАНЫ'},
+            'body': 'Россия, Франция, Польша, Чехия, Литва ... '
         },
         {
-            'author': {'username': 'Susan'},
-            'body': 'I will bring more wine from Paris, than photos on the background of the Eiffel tower!'
+            'author': {'username': 'ГОРОДА'},
+            'body': 'Москва, Лондон, Копенгаген, Барселона, Рига ... '
         }, 
         {
-            'author': {'username': 'Bruce'},
-            'body': 'Недавно я спорил с одним своим другом из Великобритании по поводу того, что лучше на вкус: английская кухня или грязь!'
+            'author': {'username': 'АВИАКОМПАНИИ'},
+            'body': ' Белка, Стрелка, Ракета ... '
         }
     ]
     return render_template("index.html", title='Мой профиль', posts=posts)
@@ -84,3 +84,7 @@ def user(username):
 @app.route('/calen')
 def calen():
     return render_template('calendar.html')
+
+@app.route('/map')
+def map():
+    return render_template('map.html')

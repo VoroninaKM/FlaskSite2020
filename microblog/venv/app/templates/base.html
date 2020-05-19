@@ -12,7 +12,7 @@
     <body>
         <div id="basic">
             <div id="head-site">
-                <a><img src= "{{ url_for( 'static' , filename='Screenshot_3.png') }}" alt="Авиаперелеты"></a>
+                <a><img src= "{{ url_for( 'static' , filename='screenshot_3.png') }}" alt="Авиаперелеты"></a>
             </div>
             <div id='menu-top'>
             <div class="bg-1">
@@ -27,6 +27,12 @@
                 <li><a href="{{ url_for('logout') }}">Выход</a></li>
                 {% endif %}
                 </ul>
+                <div class="d1">
+                    <form>
+                    <input type="text" placeholder="Искать здесь...">
+                    <button type="submit"></button>
+                    </form>
+                  </div>
             </div>
             <div class="bg-2"></div>
             <div id="content">
@@ -42,10 +48,8 @@
                         <ul>
                         <li><a href="#">Купить билет</a></li>
                         <li><a href="{{ url_for('calen') }}">Календарь</a></li>
-                        <li><a href="#">Карта</a></li>
+                        <li><a href="{{ url_for('map') }}">Карта</a></li>
                         <li><a href="#">Отели</a></li>
-                        <li><a href="#">Спланируйте поездку</a></li>
-                        <li><a href="#">Наши партнеры</a></li>
                         <li><a href="#">Контакты</a></li>
                         <li><a href="#">О нас</a></li>
                         <li><a></a></li>

@@ -3,6 +3,7 @@
 
 {% block content %}
     <h1>Регистрация</h1>
+    <table>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
@@ -35,4 +36,5 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
+    </table>
 {% endblock %}

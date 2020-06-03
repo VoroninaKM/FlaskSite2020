@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+        <form action="/action_page.php">
+            <div class="row">
+            <div class="col-50">
+                <h3>Билет</h3>
+                <label for="ccnum">ФИО</label>
+                <input type="text">
+                <label for="expmonth">Город ВЫЛЕТА</label>
+                <input type="text">
+                <label for="expyear">Город ПРИЛЕТА</label>
+                <input type="text">
+                <label for="cvv">Серия и номер паспорта</label>
+                <input type="text">
+                </div>  
+            <a href="{{ url_for('oplata')}}" >Перейти к оплате</a>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+<div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action="/action_page.php">
+          <div class="row">
+            <div class="col-50">
+              <h3>Оплата</h3>
+              <label for="ccnum">Номер карты</label>
+              <input type="text">
+              <label for="expmonth">Держатель карты</label>
+              <input type="text">
+              <label for="expyear">Месяц\Год</label>
+              <input type="text">
+              <label for="cvv">CVV</label>
+              <input type="text">
+            </div>
+          </div>
+          {% if current_user.is_anonymous %}
+          <a href="{{ url_for('login') }}">Купить</a>
+          {% else %}
+          <a href="{{ url_for('user', username=current_user.username)}}">Купить</a>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

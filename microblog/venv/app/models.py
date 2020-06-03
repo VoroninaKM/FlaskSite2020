@@ -8,6 +8,7 @@ from flask_login import UserMixin
 from app import login
 from hashlib import md5
 
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -24,8 +25,6 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-
-
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
@@ -38,3 +37,11 @@ class Post(db.Model):
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
+class hisoriTickets(db.Model):
+    id = db.Column(db.Integer(), primary_key=True,autoincrement=True)
+    login_id = db.Column(db.Integer())
+    from_city = db.Column(db.String(300), nullable=False)
+    to_city = db.Column(db.String(300), nullable=False)
+    price = db.Column(db.Integer(), nullable=False)
+    date = db.Column(db.Date)
